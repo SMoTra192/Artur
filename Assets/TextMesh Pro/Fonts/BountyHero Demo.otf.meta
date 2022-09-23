@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: eea8c3c8c49e2ba42b115ccc062aae66
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bounty Hero Demo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0d7ff77b55d27c641812c1039c538355, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
