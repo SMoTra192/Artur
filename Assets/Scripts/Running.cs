@@ -9,7 +9,6 @@ public class Running : MonoBehaviour
     private Transform nextpos;
     [SerializeField] private float _speed;
     [SerializeField] private int NextposIndex;
-
     private void Start()
     {
         nextpos = positions[0];
