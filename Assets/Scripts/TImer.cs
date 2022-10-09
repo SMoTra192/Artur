@@ -1,20 +1,23 @@
+using System;
 using TMPro;
 using UnityEngine;
 
 public class TImer : MonoBehaviour
 {
-    private float _timerduration = 3f * 60f;
+    public float _timerduration = 3f * 60f;
     private float _timer;
     [SerializeField]private TextMeshProUGUI _firstminute;
     [SerializeField]private TextMeshProUGUI _secondminute;
     [SerializeField]private TextMeshProUGUI _separator;
     [SerializeField]private TextMeshProUGUI _fisrtsecond;
     [SerializeField]private TextMeshProUGUI _secondsecond;
-    
-    
+
+
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
+        
         ResetTimer();
     }
 
@@ -29,6 +32,11 @@ public class TImer : MonoBehaviour
         else
         {
             Flash();
+        }
+
+        if (_timer <= 0)
+        {
+            panel.SetActive(true);
         }
     }
 
@@ -49,5 +57,6 @@ public class TImer : MonoBehaviour
         _secondminute.text = currenttime[1].ToString();
         _fisrtsecond.text = currenttime[2].ToString();
         _secondsecond.text = currenttime[3].ToString();
+        
     }
 }
