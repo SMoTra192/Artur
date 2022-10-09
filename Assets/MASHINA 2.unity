@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 259982605}
   - component: {fileID: 259982604}
   m_Layer: 5
-  m_Name: CONTINUE
+  m_Name: RESTART
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 259982606}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1604891867}
+        m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &259982606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,7 +3765,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CONTINUE
+  m_Text: RESTART
 --- !u!222 &1248197150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4470,7 +4482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b42598741d2e2e4f95cba04035289ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerduration: 63
+  _timerduration: 30
   _firstminute: {fileID: 1976675952}
   _secondminute: {fileID: 893550417}
   _separator: {fileID: 934373172}
@@ -4521,6 +4533,7 @@ GameObject:
   - component: {fileID: 1604891865}
   - component: {fileID: 1604891864}
   - component: {fileID: 1604891863}
+  - component: {fileID: 1604891867}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -4609,6 +4622,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 51, y: 0, z: 0}
+--- !u!114 &1604891867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604891862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97800a4a6a9ad224399f5333a470ad5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1612645002
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,17 +14,5 @@ public class GameOverScript : MonoBehaviour
     {
         gamescore = ScoreSystem.ScoreCount;
         score.text =("Score: ") + (gamescore);
-        
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            ScoreSystem.ScoreCount = 0;
-        }
     }
 }
