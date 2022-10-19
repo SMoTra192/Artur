@@ -7,20 +7,19 @@ using UnityEngine;
     {
         [SerializeField] private float MaxHealth;
         private float curHealth;
-        [SerializeField] private float DamageAmount;
+        
         [SerializeField] private GameObject panel,gamepanel;
-        [SerializeField] private GameObject _enemy;
 
         private void Start()
         {
-            curHealth = MaxHealth;
-            
+            //curHealth = MaxHealth;
+            HealthCount.healthCount = MaxHealth;
         }
 
         public void TakeDamage (int DamageAmount)
         {
-            curHealth -= DamageAmount;
-            if (curHealth == 0)
+            HealthCount.healthCount -= DamageAmount;
+            if (HealthCount.healthCount == 0)
             {
                 panel.SetActive(true);
                 gamepanel.SetActive(false);
@@ -30,7 +29,10 @@ using UnityEngine;
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.gameObject.CompareTag("Enemy")) TakeDamage(1);
+            if (other.gameObject.CompareTag("Enemy"))
+                TakeDamage(1);
+
+            
         }
     }
     
