@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +7,9 @@ public class TImer : MonoBehaviour
 {
     public float _timerduration = 3f * 60f;
     private float _timer;
+    [SerializeField] private GameObject effect1, effect2;
+    [SerializeField]private Transform effectPos1, effectPos2;
+    private bool isCreated = false;
     [SerializeField]private TextMeshProUGUI _firstminute;
     [SerializeField]private TextMeshProUGUI _secondminute;
     [SerializeField]private TextMeshProUGUI _separator;
@@ -14,14 +18,12 @@ public class TImer : MonoBehaviour
 
 
     public GameObject panel;
-    // Start is called before the first frame update
     void Start()
     {
-        
         ResetTimer();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (_timer > 0)
@@ -33,10 +35,21 @@ public class TImer : MonoBehaviour
         {
             Flash();
         }
-
         if (_timer <= 0)
         {
             panel.SetActive(true);
+        }
+
+        if (_timer > 0 && _timer < 1f)
+        {
+            if (!isCreated)
+            {
+                Instantiate(effect1, effectPos1.transform.position, Quaternion.identity);
+                Instantiate(effect2, effectPos2.transform.position, Quaternion.identity);
+                Instantiate(effect1, effectPos1.transform.position, Quaternion.identity);
+                Instantiate(effect2, effectPos2.transform.position, Quaternion.identity);
+                isCreated = true;
+            }
         }
     }
 
@@ -59,4 +72,5 @@ public class TImer : MonoBehaviour
         _secondsecond.text = currenttime[3].ToString();
         
     }
+    
 }
