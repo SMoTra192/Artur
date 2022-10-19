@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Resources;
 using TMPro;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class TImer : MonoBehaviour
     [SerializeField]private TextMeshProUGUI _secondsecond;
 
 
-    public GameObject panel;
+    public GameObject panel,gamepanel;
     void Start()
     {
         ResetTimer();
@@ -37,6 +38,7 @@ public class TImer : MonoBehaviour
         }
         if (_timer <= 0)
         {
+            gamepanel.SetActive(false);
             panel.SetActive(true);
         }
 

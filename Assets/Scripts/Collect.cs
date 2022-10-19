@@ -9,6 +9,7 @@ public class Collect : MonoBehaviour
     [SerializeField] private GameObject effect;
     private void OnTriggerEnter(Collider other)
     {
+        
         Instantiate(effect, transform.position, Quaternion.identity);
         ScoreSystem.ScoreCount += ScoreAmount;
         Destroy(gameObject);
