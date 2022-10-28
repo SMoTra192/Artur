@@ -1,21 +1,28 @@
 using System;
 using System.Collections;
 using System.Resources;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
 public class TImer : MonoBehaviour
-{
-    public float _timerduration = 3f * 60f;
-    private float _timer;
-    [SerializeField] private GameObject effect1, effect2;
-    [SerializeField]private Transform effectPos1, effectPos2;
+{  
     private bool isCreated = false;
+    private float _timer;
+    [Header("Effects")]
+    [SerializeField] private GameObject effect1, effect2;
+    [SerializeField] private Transform effectPos1, effectPos2;
+    [Header("Timer")]
+    public float _timerduration = 3f * 60f;
+    [SerializeField] private GameObject timePanel;
     [SerializeField]private TextMeshProUGUI _firstminute;
     [SerializeField]private TextMeshProUGUI _secondminute;
     [SerializeField]private TextMeshProUGUI _separator;
     [SerializeField]private TextMeshProUGUI _fisrtsecond;
-    [SerializeField]private TextMeshProUGUI _secondsecond;
+    [SerializeField]private TextMeshProUGUI _secondsecond; 
+    [Header("Other")] 
+    [SerializeField] private GameObject Barrier,MainGame;
+    
 
 
     public GameObject panel,gamepanel;
@@ -40,9 +47,10 @@ public class TImer : MonoBehaviour
         {
             gamepanel.SetActive(false);
             panel.SetActive(true);
+            MainGame.SetActive(false);
         }
 
-        if (_timer > 0 && _timer < 1f)
+        if (_timer > 0 && _timer < 2f)
         {
             if (!isCreated)
             {
@@ -53,6 +61,14 @@ public class TImer : MonoBehaviour
                 isCreated = true;
             }
         }
+
+        if (_timer < 20) timePanel.SetActive(true);
+        if (_timer < 10)
+        {
+            timePanel.SetActive(false);
+            Barrier.SetActive(false);
+        }
+            
     }
 
     private void ResetTimer()
