@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-    public class HealthSystem : MonoBehaviour
+public class HealthSystem : MonoBehaviour
     {
         [SerializeField] private float MaxHealth;
         private float curHealth;
         
-        [SerializeField] private GameObject panel,gamepanel,damagePanel;
+        [SerializeField] private GameObject panel,gamepanel,damagePanel,Main;
 
         private void Start()
         {
@@ -24,6 +25,7 @@ using UnityEngine;
                 panel.SetActive(true);
                 gamepanel.SetActive(false);
                 gameObject.SetActive(false);
+                Main.SetActive(false);
             }
         }
 

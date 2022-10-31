@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/City.unity
     guid: 2155a67cc3474724598c82c9763c6aaf
   - enabled: 1
-    path: Assets/Menu.unity
+    path: Assets/Locations.unity
     guid: 4190dea791f4cf0409ae74e98ab084e2
   - enabled: 1
     path: Assets/Skins.unity

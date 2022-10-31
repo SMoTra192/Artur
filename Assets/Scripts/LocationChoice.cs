@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LocationChoice : MonoBehaviour
 {
+    [SerializeField] private GameObject Main,SkinWindow;
     public void OnSceneMenuClick()
     {
         SceneManager.LoadScene("Menu");
@@ -18,6 +19,14 @@ public class LocationChoice : MonoBehaviour
 
     public void OnSceneSkinsClick()
     {
-        SceneManager.LoadScene("Skins");
+        Main.SetActive(false);
+        SkinWindow.SetActive(true);
     }
+
+    public void BackToScene()
+    {
+        Main.SetActive(true);
+        SkinWindow.SetActive(false);
+    }
+    
 }
