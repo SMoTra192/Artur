@@ -20,7 +20,7 @@ public class HealthSystem : MonoBehaviour
         public void TakeDamage (int DamageAmount)
         {
             HealthCount.healthCount -= DamageAmount;
-            if (HealthCount.healthCount < 0)
+            if (HealthCount.healthCount == 0)
             {
                 panel.SetActive(true);
                 gamepanel.SetActive(false);

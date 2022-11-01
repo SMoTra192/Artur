@@ -15,6 +15,7 @@ public class TImer : MonoBehaviour
     [Header("Timer")]
     public float _timerduration = 3f * 60f;
     [SerializeField] private GameObject timePanel;
+    [SerializeField] private GameObject TimerPanel;
     [SerializeField]private TextMeshProUGUI _firstminute;
     [SerializeField]private TextMeshProUGUI _secondminute;
     [SerializeField]private TextMeshProUGUI _separator;
@@ -29,6 +30,7 @@ public class TImer : MonoBehaviour
     void Start()
     {
         ResetTimer();
+        TimerPanel.SetActive(false);
     }
 
     
@@ -63,12 +65,16 @@ public class TImer : MonoBehaviour
         }
 
         if (_timer < 20) timePanel.SetActive(true);
-        if (_timer < 10)
+        if (_timer < 15)
         {
             timePanel.SetActive(false);
             Barrier.SetActive(false);
-        }
+            TimerPanel.SetActive(false);
             
+        }
+
+        if (_timer < 18) TimerPanel.SetActive(true);
+
     }
 
     private void ResetTimer()
