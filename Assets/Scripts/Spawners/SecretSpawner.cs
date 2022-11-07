@@ -1,10 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Random = UnityEngine.Random;
-
 public class SecretSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject SecretNPC;
@@ -17,10 +11,11 @@ public class SecretSpawner : MonoBehaviour
     {
         if (Collect.isTouched)
         {
-            GameObject Secret = Instantiate(SecretNPC, spawnPoint.transform.position, Quaternion.identity);
-            GameObject Secret2 = Instantiate(SecretNPC, spawnPoint.transform.position, Quaternion.identity);
-            Secret.transform.parent = Parent;
-            Secret2.transform.parent = Parent;
+            for (var i = 0; i < 2; i++)
+            {
+                GameObject Secret = Instantiate(SecretNPC, spawnPoint.transform.position, Quaternion.identity);
+                Secret.transform.parent = Parent;
+            }
             Collect.isTouched = false;
         }
     }

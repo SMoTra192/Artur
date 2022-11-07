@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
-
 public class GameOverScript : MonoBehaviour
 {
     public TextMeshProUGUI score;
@@ -14,6 +8,6 @@ public class GameOverScript : MonoBehaviour
     void Start()
     {
         gamescore = ScoreSystem.ScoreCount;
-        score.text =("Score:") + (gamescore);
+        score.text =("Score:" + $"{gamescore}");
     }
 }

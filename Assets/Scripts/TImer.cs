@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Resources;
-using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -41,10 +37,6 @@ public class TImer : MonoBehaviour
             _timer -= Time.deltaTime;
             UpdateDisplay(_timer);
         }
-        else
-        {
-            Flash();
-        }
         if (_timer <= 0)
         {
             gamepanel.SetActive(false);
@@ -56,10 +48,11 @@ public class TImer : MonoBehaviour
         {
             if (!isCreated)
             {
-                Instantiate(effect1, effectPos1.transform.position, Quaternion.identity);
-                Instantiate(effect2, effectPos2.transform.position, Quaternion.identity);
-                Instantiate(effect1, effectPos1.transform.position, Quaternion.identity);
-                Instantiate(effect2, effectPos2.transform.position, Quaternion.identity);
+                for (var i = 0; i < 2; i++)
+                {
+                    Instantiate(effect1, effectPos1.transform.position, Quaternion.identity);
+                    Instantiate(effect2, effectPos2.transform.position, Quaternion.identity);
+                }
                 isCreated = true;
             }
         }
@@ -81,10 +74,7 @@ public class TImer : MonoBehaviour
     {
         _timer = _timerduration;
     }
-
-    private void Flash()
-    {}
-
+    
     private void UpdateDisplay(float time)
     {
         float minutes = Mathf.FloorToInt(time / 60);

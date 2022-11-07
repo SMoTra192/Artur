@@ -1,16 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class KristalSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject kristalText;
-    
-    public static int kristalCount;
+    [SerializeField] private Text keyText;
+    public static float KeyCount;
+    public static string KeyScore;
+
+    private void Start()
+    {
+        keyText.text = GetComponent<Text>().text;
+        KeyScore = "KeyScore";
+    }
+
     void Update()
     {
-        
-        kristalText.GetComponent<Text>().text = " " + kristalCount;
+        KeyCount = PlayerPrefs.GetFloat("KeyScore");
+        keyText.text = $"{KeyCount}";
     }
 }

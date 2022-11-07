@@ -7,10 +7,16 @@ using UnityEngine.UI;
 public class CoinSystem : MonoBehaviour
 {
     public static float coinCount;
-    [SerializeField] private GameObject coinText;
+    [SerializeField] private Text coinText;
+
+    private void Start()
+    {
+        coinText.text = GetComponent<Text>().text;
+    }
 
     private void Update()
     {
-        coinText.GetComponent<Text>().text = " " + coinCount;
+        coinCount = PlayerPrefs.GetFloat("CoinScore");
+        coinText.text = $"{coinCount}";
     }
 }

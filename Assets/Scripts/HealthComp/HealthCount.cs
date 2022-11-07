@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthCount : MonoBehaviour
 {
-    [SerializeField] private GameObject healthText;
+    [SerializeField] private Text healthText;
     public static float healthCount;
-    
+
+    private void Start()
+    {
+        healthText.text = GetComponent<Text>().text;
+    }
+
     void Update()
     {
-        healthText.GetComponent<Text>().text = " " + healthCount; 
+        healthText.text = $"{healthCount}"; 
     }
 }
